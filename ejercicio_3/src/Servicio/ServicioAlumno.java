@@ -20,24 +20,21 @@ public class ServicioAlumno {
     ArrayList<Alumno> alumnos = new ArrayList<>();
 
     Alumno a = new Alumno();
-    
-    public void ingresarAlumnos(){
-     
+
+    public void ingresarAlumnos() {
+
         String respuesta;
-        
-        do {            
+
+        do {
             crearAlumno();
-            
+
             System.out.println("¿Desea ingresar otro alumno? S/N");
             respuesta = leer.next();
-            
+
         } while (respuesta.equalsIgnoreCase("s"));
-        
-        
-        
+
     }
-    
-    
+
     private Alumno crearAlumno() {
         System.out.println("Ingrese el nombre del Alumno: ");
         String nombre = leer.next();
@@ -55,43 +52,46 @@ public class ServicioAlumno {
         not.add(nota1);
         not.add(nota2);
         not.add(nota3);
-        
+
         Alumno a1 = new Alumno();
-        
+
         a1.setNombre(nombre);
         a1.setNotas(not);
-        
+
         alumnos.add(a1);
-        
-        
-        
+
         return a1;
     }
-    public int notaFinal(Alumno alum){
-        
+
+    public void notaFinal(Alumno alum) {
+
         int promedio;
         int suma = 0;
-        
+
         for (int nota : alum.getNotas()) {
             suma += nota;
         }
         alum.setNotaFinal(suma / alum.getNotas().size());
         
-        return alum.getNotaFinal();
+        System.out.println("La nota final de " + alum.getNombre() + " es: " + alum.getNotaFinal());
     }
-    
-    public Alumno buscarAlumno(String nombre){
+
+    public Alumno buscarAlumno() {
+        System.out.println("Ingrese el nombre del alumno: ");
+        String nom = leer.next();
+        
         Alumno alum = null;
         for (Alumno alumno : alumnos) {
-            if (alumno.getNombre().equalsIgnoreCase(nombre)){
+            if (alumno.getNombre().equalsIgnoreCase(nom)) {
                 alum = alumno;
                 break;
             }
         }
         return alum;
+        
     }
-    
-    public void mostrarAlumnos(){
+
+    public void mostrarAlumnos() {
         Iterator it = alumnos.iterator();
         System.out.println("Elementos de la lista: ");
         while (it.hasNext()) {
