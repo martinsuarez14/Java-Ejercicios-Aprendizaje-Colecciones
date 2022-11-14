@@ -70,9 +70,9 @@ public class ServicioPelicula {
             if (peli.getDuracion() > 1) {
                 System.out.println(peli.toString());
             }
-            System.out.println("");
-
         }
+        System.out.println("");
+
         /*
 public void mostrasMayor1hr(){
         System.out.println("---------::::Peliculas de mÃ¡s de 1 hora::::----------");
