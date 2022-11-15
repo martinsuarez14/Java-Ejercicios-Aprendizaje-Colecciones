@@ -46,7 +46,7 @@ public class Extra_1 {
         }
         System.out.println("");
         System.out.println("-----SUMA-----");
-        System.out.println("La suma total es: " + suma);
+        System.out.println("La suma total es-> " + suma);
         
         System.out.println("");
         System.out.println("-----PROMEDIO-----");
